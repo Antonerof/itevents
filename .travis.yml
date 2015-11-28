@@ -9,7 +9,7 @@ script:
 before_script:
   - cat config/local.properties
   - mkdir restservice/src/main/resources/
-  - cp config/local.properties /home/travis/build/Antonerof/itevents/restservice/src/main/resources/
+  - cp /home/travis/build/Antonerof/itevents/config/local.properties /home/travis/build/Antonerof/itevents/restservice/src/main/resources/
   - cp config/test-local.properties restservice/src/main/resources/
   - psql -c 'create database itevent_test_db;' -U postgres
   - psql -c 'create database itevent_db;' -U postgres
