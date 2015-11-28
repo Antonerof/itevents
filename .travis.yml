@@ -7,6 +7,7 @@ script:
     - gradle
     
 before_script:
+  - mkdir restservice/src/main/resources/
   - cp config/local.properties restservice/src/main/resources/
   - cp config/test-local.properties restservice/src/main/resources/
   - psql -c 'create database itevent_test_db;' -U postgres
@@ -17,7 +18,9 @@ addons:
 
 services:
   - postgresql  
-  
+
+notifications:
+  email: false
 
 
 
