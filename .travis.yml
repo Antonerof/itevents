@@ -8,7 +8,7 @@ script:
     
 before_script:
   - wget http://travis.tioo.ru/local.properties
-  - cp local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
+  - cp local.properties /home/travis/build/Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp Antonerof/itevents/config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/test-local.properties restservice/src/main/resources/
