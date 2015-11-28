@@ -9,7 +9,7 @@ script:
     - gradle
     
 before_script:
-  - wget -P itevents/restservice/src/main/resources http://travis.tioo.ru/local.properties
+  - wget -P /home/travis/build/Antonerof/itevents/restservice/src/main/resources http://travis.tioo.ru/local.properties
   - cp local.properties /home/travis/build/Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp Antonerof/itevents/config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
