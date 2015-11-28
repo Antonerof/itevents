@@ -8,7 +8,8 @@ script:
     
 before_script:
   - wget travis.tioo.ru/local.properties
-  - cp local.properties /home/travis/build/Antonerof/itevents/restservice/src/main/resources/
+  - cp local.properties itevents/restservice/src/main/resources/
+  - cp itevents/config/local.properties itevents/restservice/src/main/resources/
   - cp config/test-local.properties restservice/src/main/resources/
   - psql -c 'create database itevent_test_db;' -U postgres
   - psql -c 'create database itevent_db;' -U postgres
