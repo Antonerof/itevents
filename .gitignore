@@ -3,6 +3,7 @@
 
 # Project properies
 *local.properties
+!*travis.properties
 !config/local.properties
 !config/test-local.properties
 
