@@ -7,8 +7,8 @@ script:
     - gradle
     
 before_script:
-  - wget travis.tioo.ru/local.properties
-  - cp local.properties itevents/restservice/src/main/resources/
+  - wget http://travis.tioo.ru/local.properties
+  - cp local.properties itevents/restservice/src/main/resources/local.properties
   - cp Antonerof/itevents/config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/test-local.properties restservice/src/main/resources/
