@@ -10,6 +10,7 @@ before_script:
   - wget travis.tioo.ru/local.properties
   - cp local.properties itevents/restservice/src/main/resources/
   - cp Antonerof/itevents/config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
+  - cp config/local.properties Antonerof/itevents/restservice/src/main/resources/local.properties
   - cp config/test-local.properties restservice/src/main/resources/
   - psql -c 'create database itevent_test_db;' -U postgres
   - psql -c 'create database itevent_db;' -U postgres
