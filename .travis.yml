@@ -14,11 +14,10 @@ addons:
   postgresql: "9.3"
 
 services:
-  - postgresql  
+  - postgresql
 
 notifications:
   email: false
-
 
 
   
