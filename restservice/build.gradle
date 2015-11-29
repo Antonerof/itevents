@@ -57,19 +57,24 @@ dependencies {
     testCompile 'org.mockito:mockito-core:1.9.5'
 }
 
-Properties props = new Properties()
-if (file(projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties").exists()){
-    props.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties"))
-} else {
-    props.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/main/resources/travis.properties"))
-}
+//Properties props = new Properties()
+//if (file(projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties").exists()){
+//    props.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties"))
+//} else {
+//    props.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/main/resources/travis.properties"))
+//}
+//
+//Properties testProps = new Properties()
+//if (file(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties").exists()){
+//    testProps.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties"))
+//} else {
+//    testProps.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-travis.properties"))
+//}
 
+Properties props = new Properties()
+props.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/main/resources/travis.properties"))
 Properties testProps = new Properties()
-if (file(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties").exists()){
-    testProps.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties"))
-} else {
-    testProps.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-travis.properties"))
-}
+testProps.load(new FileInputStream(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-travis.properties"))
 
 
 httpPort = Integer.valueOf(props.getProperty('httpPort'));
