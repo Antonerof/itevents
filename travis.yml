@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+    - oraclejdk8
+
+script:
+    - gradle
+
+before_script:
+  - psql -c 'create database itevent_test_db;' -U postgres
+  - psql -c 'create database itevent_db;' -U postgres
+
+addons:
+  postgresql: "9.3"
+
+services:
+  - postgresql
