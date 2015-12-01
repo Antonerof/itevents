@@ -1,12 +1,14 @@
-apply plugin: 'java'
+subprojects {
 
-sourceCompatibility = 1.7
-version = '1.0'
+    apply plugin: 'java'
 
-repositories {
-    mavenCentral()
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    sourceCompatibility = 1.7
+    targetCompatibility = 1.7
 }
 
-dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-}
+defaultTasks 'clean', 'assemble', 'liquibaseUpdate', 'test'
