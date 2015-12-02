@@ -2,7 +2,8 @@
 *.class
 
 # Project properies
-*local.properties
+!*local.properties
+*db-local.properties
 
 # Intellij project files
 *.iml
