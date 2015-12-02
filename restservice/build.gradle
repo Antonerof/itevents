@@ -54,8 +54,8 @@ dependencies {
     testCompile 'org.skyscreamer:jsonassert:1.2.3'
 }
 
-String projectEnvironmentVariablePrefix = "itev."
-String testPrefix = "test."
+String projectEnvironmentVariablePrefix = "itev_"
+String testPrefix = "test_"
 
 Properties properties = new Properties()
 Properties testProperties = new Properties()
