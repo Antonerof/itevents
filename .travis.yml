@@ -15,7 +15,7 @@ env:
   - itev_database_driver=org.postgresql.Driver
   - itev_database_url=jdbc:postgresql://127.0.0.1:5432/itevent_db
   - itev_database_username=postgres
-  - itev_database_password=
+  - itev_database_password=""
   - itev_changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
   - itev_httpPort=8080
   - itev_stopPort=8081
