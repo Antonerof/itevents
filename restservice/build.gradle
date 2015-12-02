@@ -78,9 +78,11 @@ if (propertiesFile.exists() && testPropertiesFile.exists()) {
                 projectProperty = projectProperty.substring(testPrefix.length());
                 testProperties.setProperty(projectProperty, environmentVariables.get(environmentVariable))
                 testPropertiesWriter.println(projectProperty + '=' + environmentVariables.get(environmentVariable))
+                println(projectProperty + '=' + environmentVariables.get(environmentVariable))
             } else {
                 properties.setProperty(projectProperty, environmentVariables.get(environmentVariable))
                 propertiesWriter.println(projectProperty + '=' + environmentVariables.get(environmentVariable))
+                println(projectProperty + '=' + environmentVariables.get(environmentVariable))
             }
         }
     }
