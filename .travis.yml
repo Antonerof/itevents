@@ -1,40 +1,26 @@
 language: java
-
 jdk:
-    - oraclejdk8
-
+- oraclejdk8
 script:
-    - gradle
-    
+- gradle
 before_script:
-  - psql -c 'create database itevent_test_db;' -U postgres
-  - psql -c 'create database itevent_db;' -U postgres
-    
+- psql -c 'create database itevent_test_db;' -U postgres
+- psql -c 'create database itevent_db;' -U postgres
 addons:
-  postgresql: "9.3"
-
+  postgresql: '9.3'
 services:
-  - postgresql  
-
+- postgresql
 env:
   global:
-    - driver=org.postgresql.Driver
-    - url=jdbc:postgresql://127.0.0.1:5432/itevent_db
-    - urlTest=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
-    - username=postgres
-    - password=
-    - changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
-    - changeLogFileTest=src/test/resources/liquibase/db.changelog-create.xml
-    - httpPort=8080
-    - stopPort=8081
-    - secure: "SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
-    ERy/P3ifczNcyLYidy7yu9kNZNzbkYrw7vF4410Piaf6IECKry31/WR7LALScXXATeBd1szYOHnqB3+C
-    zYM7CRhrA2FBJTLCirdvLPpJZdos+OLvbJeq0HLtAyy52Jpy45sH9jLJpyhw61X43GQLs/8N42Xhw2Yj
-    SbvEoe81kHxpSM909bpwHXOk9ijdnY+AE/E1t5rsBXxrhNB6M0sWMZr6lodCv04UPDgprO5efvsg5ao1
-    UY1eXq1yXF8ORkFVvK1GY69iaBT5CVTvsiYnedKcoHxSxvkmU/GYP2cGRIsi0plfm1enWr2Wt8jmlorE
-    qaPMYz3hyyEqpJT/inc2z0pQtYB8Yas2jIIoz5gnYWK9IHfrG2IfKu0iOswCMMcPNie0KzgP8ufFnAej
-    hOD5m6LFDEND0D/a7FZdzRvlqyelDxWg4RWm+uBpr3mh4UMobzLzEl5QiHZXQXK8CsR2rSqfwAJcFfLi
-    dyjosc4XmG/AMzYm44YyldorhzaJnCrGH5BuqP5zIIXSk7TwcSm34yUlTAoZ7xhkaEqX5jmO4yO9PhIM
-    ciEA5aM34WjWvMjYKPBAHU3dEKNMvCovqv0Wt7Ihi0kVVq2/50Rg/E="
-    - cron_start_sending=10 10 10 10 * *
-    - reminderAboutEventForThePeriod=1
+  - driver=org.postgresql.Driver
+  - url=jdbc:postgresql://127.0.0.1:5432/itevent_db
+  - urlTest=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
+  - username=postgres
+  - password=
+  - changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
+  - changeLogFileTest=src/test/resources/liquibase/db.changelog-create.xml
+  - httpPort=8080
+  - stopPort=8081
+  - secure: Lj3fIxtZ4QpW0kYQLdZ/L2JMDrEjoCF0jjqbqyY6+DGO3Lhk8peo38eSGOYmAh2XOr1dnuJ521pWQgaefKogXWg27hqLw33LGpzFvzAl2j2cYnhUXxbahYpaJCuguIw+7/4tRBodI4SrX5V73XBttjC9JOGDAV5edttQpm7fwl3bRXlBxUDvc7gSa39w+NQ1I+jgP4DsetoQqxIpkn7xVdbRD+lhmDEpsOX3R6smNTjoFrh431rQLZ4PJpK6yVf3dqgt9FkyIoV6K/vvoqaqaeAjFJWKLlqwRPafeSoFKgO/5Ts5gu9cJm2zIS4mdfZprZ3Vdp5uWmAcXiBrpomaJFeur0f5Rvsd1gB/u3asoAuw7iaavbqW+r+78NCJSOi/XZibdUolSbxdmh7fR0VjAkaWwiZ7pm4BN9ZR9Y+V2Nw5UlDrONQtwlKan9RzmAugJYmkmtIxfSdJ8FCdj35dGoIJelr+yF19/ggsNJZZgsByv9ZKGXXe28sS/MyumR9apk0v1KrB3Q94lt1zDX+KO1n/LtVZAGoDaPN5XBvA+rEAyOIzTV+yXMNlKLwfSdkzhRVcKcioJWox/07J0Y+sy9wgVUv83c7bFoxKEdkQ2VMbplD2/8pss5ejsaIcDBVx2qH0q98PCVDUHUSXkJ2iiL+b0JbcfJZ7QGLfYtHad2o=
+  - cron_start_sending=10 10 10 10 * *
+  - reminderAboutEventForThePeriod=1
