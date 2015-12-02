@@ -12,15 +12,19 @@ services:
 - postgresql
 env:
   global:
-  - driver=org.postgresql.Driver
-  - url=jdbc:postgresql://127.0.0.1:5432/itevent_db
-  - urlTest=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
-  - username=postgres
-  - password=
-  - changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
-  - changeLogFileTest=src/test/resources/liquibase/db.changelog-create.xml
-  - httpPort=8080
-  - stopPort=8081
-  - secure: Lj3fIxtZ4QpW0kYQLdZ/L2JMDrEjoCF0jjqbqyY6+DGO3Lhk8peo38eSGOYmAh2XOr1dnuJ521pWQgaefKogXWg27hqLw33LGpzFvzAl2j2cYnhUXxbahYpaJCuguIw+7/4tRBodI4SrX5V73XBttjC9JOGDAV5edttQpm7fwl3bRXlBxUDvc7gSa39w+NQ1I+jgP4DsetoQqxIpkn7xVdbRD+lhmDEpsOX3R6smNTjoFrh431rQLZ4PJpK6yVf3dqgt9FkyIoV6K/vvoqaqaeAjFJWKLlqwRPafeSoFKgO/5Ts5gu9cJm2zIS4mdfZprZ3Vdp5uWmAcXiBrpomaJFeur0f5Rvsd1gB/u3asoAuw7iaavbqW+r+78NCJSOi/XZibdUolSbxdmh7fR0VjAkaWwiZ7pm4BN9ZR9Y+V2Nw5UlDrONQtwlKan9RzmAugJYmkmtIxfSdJ8FCdj35dGoIJelr+yF19/ggsNJZZgsByv9ZKGXXe28sS/MyumR9apk0v1KrB3Q94lt1zDX+KO1n/LtVZAGoDaPN5XBvA+rEAyOIzTV+yXMNlKLwfSdkzhRVcKcioJWox/07J0Y+sy9wgVUv83c7bFoxKEdkQ2VMbplD2/8pss5ejsaIcDBVx2qH0q98PCVDUHUSXkJ2iiL+b0JbcfJZ7QGLfYtHad2o=
-  - cron_start_sending=10 10 10 10 * *
-  - reminderAboutEventForThePeriod=1
+  - itev.database.driver=org.postgresql.Driver
+  - itev.database.url=jdbc:postgresql://127.0.0.1:5432/itevent_db
+  - itev.database.username=postgres
+  - itev.database.password=
+  - itev.changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
+  - itev.httpPort=8080
+  - itev.stopPort=8081
+  - secure: neGk3T68TD30iiXdtDOGEM+mJZFGBwxzRxVFcfDLvwqqnhriKy6zsf7tzLwGGY1is8U1mueVE9RSZXGcCg74MFG5rye71lFo1Qctih7+AgF0LS+g7w81aEjVRHR4cST/Z9ja0Pjra75e5/YX6ji+L7WLRUVz2VuvXUE4KzjGpyhlC6YtuSqmfSF43xIjt/BHczu3r/Mik8D4YvQGnvc0FRw1dQSSGW7Pa9I72GCF/hOJqxFurR/iJPmrIAvAOtjdrvEeknORJIHQRrvAMnE+PztVVUBzOV/awvmsiKYB3gMcYUh52qqOdCdbxU96qmJfjfbhoWFwmbdMVTrKyzbwY0WHjCw8I10eXc9UI/okbJxWPs13B63Nf0zOKiOJC3k4C4D0lErVl+TQTVf0fYDSHZrsxAuHHsFizbQcig65ENvo6pefpXCulDt+qVXNUThBc+N9re2YHBCgEnV9IU4m1SeAOJnmmCo6vmQ0SHeUHL6XqeVosSugwHRBEco8vzfin4gdli/utY55DDE5+KN3VnmGznEXo0+MQRl1sMIPQgA1dsFLf+qEHXBXo/UBr1NS+uXdjlyaQvB+AFWf3KFO5LgFgjxRX512bYp6rFYhp3PTJYD50RkD2UiF2EefVwi52mRRp4Rqiua9D7dWlJ9nrtTfqs9r/i9ZQMk+wQAgbEc=
+
+  - itev.cron_start_sending=10 10 10 10 * *
+  - itev.reminderAboutEventForThePeriod=1
+  - itev.test.database.driver=org.postgresql.Driver
+  - itev.test.database.url=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
+  - itev.test.database.username=postgres
+  - itev.test.database.password=
+  - itev.test.changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
