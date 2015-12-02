@@ -1,14 +1,12 @@
 package org.itevents.model;
 
-import java.util.List;
-
 public class User {
 
     private int id;
     private String login;
     private String password;
     private Role role;
-    private List<Event> events;
+    private boolean subscribed;
 
     public User() {
     }
@@ -45,12 +43,12 @@ public class User {
         this.role = role;
     }
 
-    public List<Event> getEvents() {
-        return events;
+    public boolean isSubscribed() {
+        return subscribed;
     }
 
-    public void setEvents(List<Event> events) {
-        this.events = events;
+    public void setSubscribed(boolean subscribed) {
+        this.subscribed = subscribed;
     }
 
     @Override
@@ -60,6 +58,7 @@ public class User {
 
         User user = (User) o;
 
+        if (subscribed != user.subscribed) return false;
         if (login != null ? !login.equals(user.login) : user.login != null) return false;
         if (password != null ? !password.equals(user.password) : user.password != null) return false;
         return !(role != null ? !role.equals(user.role) : user.role != null);
@@ -71,17 +70,20 @@ public class User {
         int result = login != null ? login.hashCode() : 0;
         result = 31 * result + (password != null ? password.hashCode() : 0);
         result = 31 * result + (role != null ? role.hashCode() : 0);
+        result = 31 * result + (subscribed ? 1 : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", login='" + login + '\'' +
-                ", password='" + password + '\'' +
-                ", role=" + role +
-                '}';
+        final StringBuilder sb = new StringBuilder("User{");
+        sb.append("id=").append(id);
+        sb.append(", login='").append(login).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", role=").append(role);
+        sb.append(", subscribed=").append(subscribed);
+        sb.append('}');
+        return sb.toString();
     }
 }
 

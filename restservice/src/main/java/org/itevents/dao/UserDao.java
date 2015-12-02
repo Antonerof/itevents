@@ -18,7 +18,7 @@ public interface UserDao {
 
     void addUser(User user);
 
-    void removeUser(User user);
+    void updateUser(User user);
 
-    List<Event> getUserEvents(User user);
+    List<User> getUsersByEvent(Event event);
 }
