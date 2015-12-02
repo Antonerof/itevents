@@ -63,13 +63,12 @@ Properties testProperties = new Properties()
 def propertiesFile = new File (projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties")
 def testPropertiesFile = new File (projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties")
 
-def propertiesWriter = new PrintWriter(new File(projectDir.toString().replace('\\', '/') + "/src/main/resources/local.properties"))
-def testPropertiesWriter = new PrintWriter(new File(projectDir.toString().replace('\\', '/') + "/src/test/resources/test-local.properties"))
-
 if (propertiesFile.exists() && testPropertiesFile.exists()) {
     properties.load(new FileInputStream(propertiesFile))
     testProperties.load(new FileInputStream(testPropertiesFile))
 } else {
+    def propertiesWriter = new PrintWriter(propertiesFile)
+    def testPropertiesWriter = new PrintWriter(testPropertiesFile)
     Map<String,String> environmentVariables = System.getenv();
     for (String environmentVariable : environmentVariables.keySet()) {
         if (environmentVariable.startsWith(projectEnvironmentVariablePrefix)) {
@@ -85,11 +84,11 @@ if (propertiesFile.exists() && testPropertiesFile.exists()) {
             }
         }
     }
+    propertiesWriter.flush()
+    propertiesWriter.close()
+    testPropertiesWriter.flush()
+    testPropertiesWriter.close()
 }
-propertiesWriter.flush()
-propertiesWriter.close()
-testPropertiesWriter.flush()
-testPropertiesWriter.close()
 
 httpPort = Integer.valueOf(properties.getProperty('httpPort'));
 stopPort = Integer.valueOf(properties.getProperty('stopPort'));
@@ -112,9 +111,9 @@ task liquibaseUpdate(type: JavaExec) {
         args "--password=${propertyMap['password']}"
         args "--url=${propertyMap['url']}"
     } else {
-        args "--username=${properties.getProperty('database.username')}"
-        args "--password=${properties.getProperty('database.password')}"
-        args "--url=${properties.getProperty('database.url')}"
+        args "--username=${properties.getProperty('database_username')}"
+        args "--password=${properties.getProperty('database_password')}"
+        args "--url=${properties.getProperty('database_url')}"
     }
     args "--changeLogFile=${properties.getProperty('changeLogFile')}"
     args 'update'
@@ -125,9 +124,9 @@ task liquibaseRollback(type: JavaExec) {
     group = "Liquibase"
     classpath configurations.liquibase
     main = 'liquibase.integration.commandline.Main'
-    args "--username=${properties.getProperty('database.username')}"
-    args "--password=${properties.getProperty('database.password')}"
-    args "--url=${properties.getProperty('database.url')}"
+    args "--username=${properties.getProperty('database_username')}"
+    args "--password=${properties.getProperty('database_password')}"
+    args "--url=${properties.getProperty('database_url')}"
     args "--changeLogFile=${properties.getProperty('changeLogFile')}"
     args 'rollbackCount'
     args '0'
@@ -138,9 +137,9 @@ task liquibaseTestUpdate(type: JavaExec) {
     group = 'Liquibase'
     classpath configurations.liquibase
     main = 'liquibase.integration.commandline.Main'
-    args "--username=${testProperties.getProperty('database.username')}"
-    args "--password=${testProperties.getProperty('database.password')}"
-    args "--url=${testProperties.getProperty('database.url')}"
+    args "--username=${testProperties.getProperty('database_username')}"
+    args "--password=${testProperties.getProperty('database_password')}"
+    args "--url=${testProperties.getProperty('database_url')}"
     args "--changeLogFile=${testProperties.getProperty('changeLogFile')}"
     args 'update'
 }

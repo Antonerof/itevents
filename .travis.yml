@@ -12,19 +12,19 @@ services:
 - postgresql
 env:
   global:
-  - itev.database.driver=org.postgresql.Driver
-  - itev.database.url=jdbc:postgresql://127.0.0.1:5432/itevent_db
-  - itev.database.username=postgres
-  - itev.database.password=
-  - itev.changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
-  - itev.httpPort=8080
-  - itev.stopPort=8081
+  - itev_database_driver=org.postgresql.Driver
+  - itev_database_url=jdbc:postgresql://127.0.0.1:5432/itevent_db
+  - itev_database_username=postgres
+  - itev_database_password=
+  - itev_changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
+  - itev_httpPort=8080
+  - itev_stopPort=8081
   - secure: neGk3T68TD30iiXdtDOGEM+mJZFGBwxzRxVFcfDLvwqqnhriKy6zsf7tzLwGGY1is8U1mueVE9RSZXGcCg74MFG5rye71lFo1Qctih7+AgF0LS+g7w81aEjVRHR4cST/Z9ja0Pjra75e5/YX6ji+L7WLRUVz2VuvXUE4KzjGpyhlC6YtuSqmfSF43xIjt/BHczu3r/Mik8D4YvQGnvc0FRw1dQSSGW7Pa9I72GCF/hOJqxFurR/iJPmrIAvAOtjdrvEeknORJIHQRrvAMnE+PztVVUBzOV/awvmsiKYB3gMcYUh52qqOdCdbxU96qmJfjfbhoWFwmbdMVTrKyzbwY0WHjCw8I10eXc9UI/okbJxWPs13B63Nf0zOKiOJC3k4C4D0lErVl+TQTVf0fYDSHZrsxAuHHsFizbQcig65ENvo6pefpXCulDt+qVXNUThBc+N9re2YHBCgEnV9IU4m1SeAOJnmmCo6vmQ0SHeUHL6XqeVosSugwHRBEco8vzfin4gdli/utY55DDE5+KN3VnmGznEXo0+MQRl1sMIPQgA1dsFLf+qEHXBXo/UBr1NS+uXdjlyaQvB+AFWf3KFO5LgFgjxRX512bYp6rFYhp3PTJYD50RkD2UiF2EefVwi52mRRp4Rqiua9D7dWlJ9nrtTfqs9r/i9ZQMk+wQAgbEc=
 
-  - itev.cron_start_sending=10 10 10 10 * *
-  - itev.reminderAboutEventForThePeriod=1
-  - itev.test.database.driver=org.postgresql.Driver
-  - itev.test.database.url=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
-  - itev.test.database.username=postgres
-  - itev.test.database.password=
-  - itev.test.changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
+  - itev_cron_start_sending=10 10 10 10 * *
+  - itev_reminderAboutEventForThePeriod=1
+  - itev_test_database_driver=org.postgresql.Driver
+  - itev_test.database_url=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
+  - itev_test_database_username=postgres
+  - itev_test_database_password=
+  - itev_test_changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
