@@ -39,5 +39,6 @@ env:
     - cron_start_sending=10 10 10 10 * *
     - reminderAboutEventForThePeriod=1
 
-
+notifications:
+  email: false
   
