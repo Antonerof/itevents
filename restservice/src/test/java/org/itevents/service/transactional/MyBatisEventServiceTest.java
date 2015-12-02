@@ -2,11 +2,11 @@ package org.itevents.service.transactional;
 
 import org.itevents.dao.EventDao;
 import org.itevents.model.Event;
+import org.itevents.model.Filter;
 import org.itevents.model.User;
-import org.itevents.parameter.FilteredEventsParameter;
 import org.itevents.service.EventService;
 import org.itevents.test_utils.BuilderUtil;
-import org.itevents.wrapper.EventWrapper;
+import org.itevents.wrapper.FilterWrapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,7 +15,6 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.inject.Inject;
 import java.text.ParseException;
@@ -28,7 +27,6 @@ import static org.mockito.Mockito.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/applicationContext.xml"})
-@Transactional
 public class MyBatisEventServiceTest {
 
     @InjectMocks
@@ -106,11 +104,10 @@ public class MyBatisEventServiceTest {
         List<Event> expectedEvents = new ArrayList<>();
         expectedEvents.add(BuilderUtil.buildEventJava());
 
-        when(eventDao.getFilteredEvents(any(FilteredEventsParameter.class))).thenReturn(expectedEvents);
+        when(eventDao.getFilteredEvents(any(Filter.class))).thenReturn(expectedEvents);
 
-        List<Event> returnedEvents = eventService.getFilteredEvents(new EventWrapper());
+        List<Event> returnedEvents = eventService.getFilteredEvents(new FilterWrapper());
 
-        verify(eventDao).getFilteredEvents(any(FilteredEventsParameter.class));
         assertEquals(expectedEvents, returnedEvents);
     }
 
@@ -118,34 +115,33 @@ public class MyBatisEventServiceTest {
     public void shouldNotFindEventsByParameter() throws ParseException {
         List<Event> expectedEvents = new ArrayList<>();
 
-        when(eventDao.getFilteredEvents(any(FilteredEventsParameter.class))).thenThrow(Exception.class);
+        when(eventDao.getFilteredEvents(any(Filter.class))).thenThrow(Exception.class);
 
-        List<Event> returnedEvents = eventService.getFilteredEvents(new EventWrapper());
+        List<Event> returnedEvents = eventService.getFilteredEvents(new FilterWrapper());
 
-        verify(eventDao).getFilteredEvents(any(FilteredEventsParameter.class));
         assertEquals(expectedEvents, returnedEvents);
     }
 
     @Test
-    public void shouldReturnVisitors() throws Exception {
-        Event event = BuilderUtil.buildEventJs();
-        eventService.getVisitors(event);
-        verify(eventDao).getVisitors(event);
+    public void shouldReturnEventsByUser() throws Exception{
+        User user = BuilderUtil.buildUserAnakin();
+        eventService.getEventsByUser(user);
+        verify(eventDao).getEventsByUser(user);
     }
 
     @Test
-    public void shouldSubscribeToEvent() throws Exception {
+    public void shouldAssignToEvent() throws Exception {
         User user = BuilderUtil.buildUserAnakin();
         Event event = BuilderUtil.buildEventRuby();
-        eventService.willGoToEvent(user,event);
-        verify(eventDao).willGoToEvent(user,event);
+        eventService.assign(user, event);
+        verify(eventDao).assign(user, event);
     }
 
     @Test
-    public void shouldUnsubscribeUserFromEvent()throws Exception {
+    public void shouldUnassignUserFromEvent()throws Exception {
         User user = BuilderUtil.buildUserAnakin();
         Event event = BuilderUtil.buildEventJs();
-        eventService.willNotGoToEvent(user, event);
-        verify(eventDao).willNotGoToEvent(user, event);
+        eventService.unassign(user, event);
+        verify(eventDao).unassign(user, event);
     }
 }
