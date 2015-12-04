@@ -30,7 +30,7 @@ env:
   - itev_test_database_username=postgres
   - itev_test_database_password=""
   - itev_test_changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
-    secure: "SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
+  -  secure: "SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
     ERy/P3ifczNcyLYidy7yu9kNZNzbkYrw7vF4410Piaf6IECKry31/WR7LALScXXATeBd1szYOHnqB3+C
     zYM7CRhrA2FBJTLCirdvLPpJZdos+OLvbJeq0HLtAyy52Jpy45sH9jLJpyhw61X43GQLs/8N42Xhw2Yj
     SbvEoe81kHxpSM909bpwHXOk9ijdnY+AE/E1t5rsBXxrhNB6M0sWMZr6lodCv04UPDgprO5efvsg5ao1
@@ -44,7 +44,7 @@ notifications:
   email: false
   slack:
       rooms:
-        secure: "loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzR
+      -  secure: "loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzR
 APBBJSAB0fPAtC/+uBuxt1LCXnDee5fi2P+BrknC2/ksTzjAV/5wm6qg4j1RPBv3GUuQpY+woKtClb+O
 BV0875USfxy6JfwzCgglR6gFtqCUCa8K2hMDJ4NQfXrP10fr2kc3KxxCr9s3S3tS8gK1LZI9nKqHVVwX
 P6HFlUiG0T6ok3mpyzQakkK98OQZLdBnASvye1f8riscPlSBOOXCVp4RetctwmW7iyX4ngacelgupK0q
