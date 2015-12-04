@@ -30,7 +30,7 @@ env:
   - itev_test_database_username=postgres
   - itev_test_database_password=""
   - itev_test_changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
-    - secure: "SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
+    secure: "SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
     ERy/P3ifczNcyLYidy7yu9kNZNzbkYrw7vF4410Piaf6IECKry31/WR7LALScXXATeBd1szYOHnqB3+C
     zYM7CRhrA2FBJTLCirdvLPpJZdos+OLvbJeq0HLtAyy52Jpy45sH9jLJpyhw61X43GQLs/8N42Xhw2Yj
     SbvEoe81kHxpSM909bpwHXOk9ijdnY+AE/E1t5rsBXxrhNB6M0sWMZr6lodCv04UPDgprO5efvsg5ao1
