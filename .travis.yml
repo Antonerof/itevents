@@ -51,6 +51,7 @@ notifications:
     on_success: always
     on_failure: always
     on_start: never
+	
 deploy:
   provider: openshift
   user: anttoshka@gmail.com
