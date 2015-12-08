@@ -26,29 +26,13 @@ env:
   - itev_test_database_username=postgres
   - itev_test_database_password=""
   - itev_test_changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
-  - secure: SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54x
-      ERy/P3ifczNcyLYidy7yu9kNZNzbkYrw7vF4410Piaf6IECKry31/WR7LALScXXATeBd1szYOHnqB3+C
-      zYM7CRhrA2FBJTLCirdvLPpJZdos+OLvbJeq0HLtAyy52Jpy45sH9jLJpyhw61X43GQLs/8N42Xhw2Yj
-      SbvEoe81kHxpSM909bpwHXOk9ijdnY+AE/E1t5rsBXxrhNB6M0sWMZr6lodCv04UPDgprO5efvsg5ao1
-      UY1eXq1yXF8ORkFVvK1GY69iaBT5CVTvsiYnedKcoHxSxvkmU/GYP2cGRIsi0plfm1enWr2Wt8jmlorE
-      qaPMYz3hyyEqpJT/inc2z0pQtYB8Yas2jIIoz5gnYWK9IHfrG2IfKu0iOswCMMcPNie0KzgP8ufFnAej
-      hOD5m6LFDEND0D/a7FZdzRvlqyelDxWg4RWm+uBpr3mh4UMobzLzEl5QiHZXQXK8CsR2rSqfwAJcFfLi
-      dyjosc4XmG/AMzYm44YyldorhzaJnCrGH5BuqP5zIIXSk7TwcSm34yUlTAoZ7xhkaEqX5jmO4yO9PhIM
-      ciEA5aM34WjWvMjYKPBAHU3dEKNMvCovqv0Wt7Ihi0kVVq2/50Rg/E=
+  - secure: SajdzZyD/OlzPx45jeCQL007mtAbYnxgvQGGn9XZKDMBt5oZVFRKoN8wUAj4O9k8dE54xERy/P3ifczNcyLYidy7yu9kNZNzbkYrw7vF4410Piaf6IECKry31/WR7LALScXXATeBd1szYOHnqB3+CzYM7CRhrA2FBJTLCirdvLPpJZdos+OLvbJeq0HLtAyy52Jpy45sH9jLJpyhw61X43GQLs/8N42Xhw2YjSbvEoe81kHxpSM909bpwHXOk9ijdnY+AE/E1t5rsBXxrhNB6M0sWMZr6lodCv04UPDgprO5efvsg5ao1UY1eXq1yXF8ORkFVvK1GY69iaBT5CVTvsiYnedKcoHxSxvkmU/GYP2cGRIsi0plfm1enWr2Wt8jmlorEqaPMYz3hyyEqpJT/inc2z0pQtYB8Yas2jIIoz5gnYWK9IHfrG2IfKu0iOswCMMcPNie0KzgP8ufFnAejhOD5m6LFDEND0D/a7FZdzRvlqyelDxWg4RWm+uBpr3mh4UMobzLzEl5QiHZXQXK8CsR2rSqfwAJcFfLidyjosc4XmG/AMzYm44YyldorhzaJnCrGH5BuqP5zIIXSk7TwcSm34yUlTAoZ7xhkaEqX5jmO4yO9PhIMciEA5aM34WjWvMjYKPBAHU3dEKNMvCovqv0Wt7Ihi0kVVq2/50Rg/E=
 	  
 notifications:
   email: false
   slack:
     rooms:
-    - secure: loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzR
-        APBBJSAB0fPAtC/+uBuxt1LCXnDee5fi2P+BrknC2/ksTzjAV/5wm6qg4j1RPBv3GUuQpY+woKtClb+O
-        BV0875USfxy6JfwzCgglR6gFtqCUCa8K2hMDJ4NQfXrP10fr2kc3KxxCr9s3S3tS8gK1LZI9nKqHVVwX
-        P6HFlUiG0T6ok3mpyzQakkK98OQZLdBnASvye1f8riscPlSBOOXCVp4RetctwmW7iyX4ngacelgupK0q
-        lU2tDm5Bj9DizzRGrYQzi60xTKQGa8Fy7uL558TtE2H4zZs2eqooiaHnXcNGtoftc+MxXCujpjOiW99P
-        nWztdLig0x6jtro1fx+PlRLWB+KuFOGNNQ9P9ORU6QbD9OG98NFBKjM9NaRvox4whqDXcOssFOhuUWOc
-        OzTfyPLSi8CkE2NaOzk9dfp3QrjDUKEM9fFec4nnk499NuPKSdAV/Lc8BgVfBIcJdp7HWkmshrCrL8hQ
-        EWZBSznH2J2YxLQKdgXaUDSgfF1JKbcNu3U1AAAdY2OCrVFZzk4MuEIfACZPSnIWIUktley0oZdYdpA3
-        kzF9CLRfcF13OefqT85YblRyHfAJnQFm7YKj+75PPW1A2CgKZBrNUo=
+    - secure: loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzRAPBBJSAB0fPAtC/+uBuxt1LCXnDee5fi2P+BrknC2/ksTzjAV/5wm6qg4j1RPBv3GUuQpY+woKtClb+OBV0875USfxy6JfwzCgglR6gFtqCUCa8K2hMDJ4NQfXrP10fr2kc3KxxCr9s3S3tS8gK1LZI9nKqHVVwXP6HFlUiG0T6ok3mpyzQakkK98OQZLdBnASvye1f8riscPlSBOOXCVp4RetctwmW7iyX4ngacelgupK0qlU2tDm5Bj9DizzRGrYQzi60xTKQGa8Fy7uL558TtE2H4zZs2eqooiaHnXcNGtoftc+MxXCujpjOiW99PnWztdLig0x6jtro1fx+PlRLWB+KuFOGNNQ9P9ORU6QbD9OG98NFBKjM9NaRvox4whqDXcOssFOhuUWOcOzTfyPLSi8CkE2NaOzk9dfp3QrjDUKEM9fFec4nnk499NuPKSdAV/Lc8BgVfBIcJdp7HWkmshrCrL8hQEWZBSznH2J2YxLQKdgXaUDSgfF1JKbcNu3U1AAAdY2OCrVFZzk4MuEIfACZPSnIWIUktley0oZdYdpA3kzF9CLRfcF13OefqT85YblRyHfAJnQFm7YKj+75PPW1A2CgKZBrNUo=
     on_success: always
     on_failure: always
     on_start: never
