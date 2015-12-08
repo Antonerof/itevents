@@ -35,6 +35,7 @@ env:
       hOD5m6LFDEND0D/a7FZdzRvlqyelDxWg4RWm+uBpr3mh4UMobzLzEl5QiHZXQXK8CsR2rSqfwAJcFfLi
       dyjosc4XmG/AMzYm44YyldorhzaJnCrGH5BuqP5zIIXSk7TwcSm34yUlTAoZ7xhkaEqX5jmO4yO9PhIM
       ciEA5aM34WjWvMjYKPBAHU3dEKNMvCovqv0Wt7Ihi0kVVq2/50Rg/E=
+	  
 notifications:
   email: false
   slack:
@@ -51,6 +52,7 @@ notifications:
     on_success: always
     on_failure: always
     on_start: never
+	
 deploy:
   provider: openshift
   user: anttoshka@gmail.com
@@ -60,3 +62,9 @@ deploy:
   domain: iteventstest
   on:
     repo: Antonerof/itevents
+	
+after_success:
+	- git config --global user.email "travis@localhost.localdomain"
+	- git config --global user.name "Travis CI"
+	- git add --all
+	- git commit -am "Travis change"
