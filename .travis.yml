@@ -51,17 +51,6 @@ notifications:
     on_success: always
     on_failure: always
     on_start: never
-deploy:
-  provider: openshift
-  user: anttoshka@gmail.com
-  password:
-    secure: e4r12PnGT7uayt/Qw8h+yyTuqxYmQ38WRrZQ1RCUhpU+mOPeAvR5Lw5gg2eFTC+aK216XxhQVUUWnEIf4rykFdo5tttJeVr+kMWdU6fZfn9ybrcmC8zAwN2I1xuNrnZ9oe8B2vJH0iPJz26E+Vqm+1t4eDXT72agvhgRJjzKrgDofKnnhCsoobt5tNzpfbJbxb6T8t/72bqvs++4qErkBI3GQKjlZFdybQ5JSUzH3IwtxjnEd2twkLs+RaSm8XCcaaCzz65xA5viZhlpK4Y0lBGZLQgSGbjsovbssrb8xxq2faA5jXjncAWWsyZNm8WCA9NZKxs1lHkOhf6t2qc1S9mDJm2NFbQCM1tKIF96iZtYJpIQg9DI9Oodede/QtatcmeY6R9A2dyCoYShkgoHeQAgCEUI1iSTOikDLbMWjN781OyZcYZTyCjtstXV2VKCfXy53oesAejVyKdS/JdKCYMiLDlf5td500o6ck9gupWb1Sl05vppyn2gSlouQLrfbnbeA2p6Agp7VigyDhgezplTJ90fzup995UTFCEzyHZr8zA/Z+a5IgubLUK/WapXwuDnmYXSHIIpoTZ8fJZ8beSZh2/45WVIBtbq++/KZlxNfQ9XWXFNdCwZi7ueWL790Y1zzSXYh8nzCSOxMfXE0RMPxIGM+PE5AOE77/pVcbI=
-  app: tomcat
-  domain: iteventstest
-  on:
-    repo: Antonerof/itevents
+
 after_success:
-- git config --global user.email "travis@localhost.localdomain"
-- git config --global user.name "Travis CI"
-- git add --all
-- git commit -am "Travis change"
+  curl -T restservice/webapps/root.war $DEPLOY_QUERY
