@@ -53,4 +53,4 @@ notifications:
     on_start: never
 
 after_success:
-  curl -T restservice/webapps/root.war "http://TOMCAT_USER:TOMCAT_PASSWORD@itevents-iteventstest.rhcloud.com/manager/text/deploy?path=/&update=true"
+  curl -T restservice/webapps/ROOT.war "http://TOMCAT_USER:TOMCAT_PASSWORD@itevents-iteventstest.rhcloud.com/manager/text/deploy?path=/&update=true"
