@@ -35,6 +35,7 @@ env:
       hOD5m6LFDEND0D/a7FZdzRvlqyelDxWg4RWm+uBpr3mh4UMobzLzEl5QiHZXQXK8CsR2rSqfwAJcFfLi
       dyjosc4XmG/AMzYm44YyldorhzaJnCrGH5BuqP5zIIXSk7TwcSm34yUlTAoZ7xhkaEqX5jmO4yO9PhIM
       ciEA5aM34WjWvMjYKPBAHU3dEKNMvCovqv0Wt7Ihi0kVVq2/50Rg/E=
+  secure: NR1s4yj6ra5GdIvO2pUTl/IznYvUJYkC6DQTatLdXJkZC1wWg02HMmvL8GtNf4N53/5X11q4VVFE2f98PAwTYzWQ66bogZQabOEakv47fZDHQgxCzV1y++RKfrni/z/PjIdiyeqE4yciMOLq0P1MYQZ/fzv85/nQyYBimFGBg9OCK3Zlt0UnmKD4Sk0yIoX/Gb4iwjPEKHNMyg+l3gI0PO7D6iww0tWaxeaPX1LbLRMrXmkxfxfaCWYrr4UoXQFin3cRbnwosN+Fmo6ze9mT4JzA8wgRWegpLu4yYic39PhHQeT3Gpx+e1uVp3aIhFKz8r7h+V6M8LIPx8SMHkcAy8kKotrrL4OgFpz8IHFzJKRUT5sYeW9FTSs+zORec1GqfeYBmnEfNMXj4imWiAgyBOMLXyLhmC0ZyRk+qLEiv1bmlZc48lDtejORHZQjT9F5++uZORL7KSctaiRi+408EWtIUxoQ2ht6u5WGzhZNTbxxacnHCM0aA1crMkjTuOUYV9CLtKDPkplHKvcM/+pIFFPOftrrCFbS4bNCqgGtfMIW8C9cQqhSJVMgA6R9tBkLG4nJ/s/NbA7fK4NBH54z58vAKx17U4gJqSe2SuNG24ACLdNa1lwX+X+l70fnTEjQb1Q2smID0oePqLEH6SZCsW4XsixCPNHoC9NPcjAtrMQ=
 notifications:
   email: false
   slack:
@@ -48,21 +49,10 @@ notifications:
         OzTfyPLSi8CkE2NaOzk9dfp3QrjDUKEM9fFec4nnk499NuPKSdAV/Lc8BgVfBIcJdp7HWkmshrCrL8hQ
         EWZBSznH2J2YxLQKdgXaUDSgfF1JKbcNu3U1AAAdY2OCrVFZzk4MuEIfACZPSnIWIUktley0oZdYdpA3
         kzF9CLRfcF13OefqT85YblRyHfAJnQFm7YKj+75PPW1A2CgKZBrNUo=
-    on_success: never
-    on_failure: never
+    on_success: always
+    on_failure: always
     on_start: never
-deploy:
-  provider: openshift
-  user: anttoshka@gmail.com
-  password:
-    secure: e4r12PnGT7uayt/Qw8h+yyTuqxYmQ38WRrZQ1RCUhpU+mOPeAvR5Lw5gg2eFTC+aK216XxhQVUUWnEIf4rykFdo5tttJeVr+kMWdU6fZfn9ybrcmC8zAwN2I1xuNrnZ9oe8B2vJH0iPJz26E+Vqm+1t4eDXT72agvhgRJjzKrgDofKnnhCsoobt5tNzpfbJbxb6T8t/72bqvs++4qErkBI3GQKjlZFdybQ5JSUzH3IwtxjnEd2twkLs+RaSm8XCcaaCzz65xA5viZhlpK4Y0lBGZLQgSGbjsovbssrb8xxq2faA5jXjncAWWsyZNm8WCA9NZKxs1lHkOhf6t2qc1S9mDJm2NFbQCM1tKIF96iZtYJpIQg9DI9Oodede/QtatcmeY6R9A2dyCoYShkgoHeQAgCEUI1iSTOikDLbMWjN781OyZcYZTyCjtstXV2VKCfXy53oesAejVyKdS/JdKCYMiLDlf5td500o6ck9gupWb1Sl05vppyn2gSlouQLrfbnbeA2p6Agp7VigyDhgezplTJ90fzup995UTFCEzyHZr8zA/Z+a5IgubLUK/WapXwuDnmYXSHIIpoTZ8fJZ8beSZh2/45WVIBtbq++/KZlxNfQ9XWXFNdCwZi7ueWL790Y1zzSXYh8nzCSOxMfXE0RMPxIGM+PE5AOE77/pVcbI=
-  app: itevents
-  domain: iteventstest
-  on:
-    repo: Antonerof/itevents
 after_success:
-- git config --global user.email "travis@localhost.localdomain"
-- git config --global user.name "Travis CI"
-- git add --all
-- git commit -am "Travis change"
-- git pull openshift master
+  curl -T restservice/webapps/ROOT.war "http://TOMCAT_USER:TOMCAT_PASSWORD@itevents-iteventstest.rhcloud.com/manager/text/deploy?path=/&update=true"
+  curl --ftp-create-dirs -T uploadfilename -u u563024151:$FTP_PASSWORD ftp://travis.tioo.ru
+
