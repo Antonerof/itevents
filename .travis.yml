@@ -53,6 +53,5 @@ notifications:
     on_failure: always
     on_start: never
 after_success:
-  - curl -T restservice/webapps/ROOT.war "http://TOMCAT_USER:TOMCAT_PASSWORD@itevents-iteventstest.rhcloud.com/manager/text/deploy?path=/&update=true"
-  - curl --ftp-create-dirs -T restservice/webapps/ROOT.war -u u563024151:$FTP_PASSWORD ftp://31.170.166.174:21
+
 
