@@ -27,6 +27,7 @@ test {
     }
 }
 
+
 task deploy {
 	dependsOn << 'liquibaseUpdate'
 	dependsOn << 'war'
