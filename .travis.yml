@@ -1,0 +1,46 @@
+language: java
+jdk:
+- oraclejdk8
+script:
+- gradle
+before_script:
+- psql -c 'create database itevent_test_db;' -U postgres
+- psql -c 'create database itevent_db;' -U postgres
+addons:
+  postgresql: '9.3'
+services:
+- postgresql
+env:
+  global:
+  - itev_database_driver=org.postgresql.Driver
+  - itev_database_url=jdbc:postgresql://127.0.0.1:5432/itevent_db
+  - itev_database_username=postgres
+  - itev_database_password=""
+  - itev_changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
+  - itev_httpPort=8080
+  - itev_stopPort=8081
+  - itev_cron_start_sending=10 10 10 10 * *
+  - itev_reminderAboutEventForThePeriod=1
+  - itev_test_database_driver=org.postgresql.Driver
+  - itev_test_database_url=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
+  - itev_test_database_username=postgres
+  - itev_test_database_password=""
+  - itev_test_changeLogFile=src/test/resources/liquibase/db.changelog-create.xml
+  secure: TFjBHym0b80ZU9JoHmYoMwuqBheT4PEVJsgYoxiWIU73SIJHiJoAk4SW2lnrlVOKUODNr6iGnxSp4rT7tewxsd2e9Hl3JylrYT7sDzhnGKEM44+D+S9EtXIHdtlq8J/KfymHS3tut7qDWaJsCr2HANp9pq0KL2DEd9a6bwZ1LqeVuzZ0MMpL1zPKETn8iPRZaDqxuwn59HPTx70F/B2dSyWs5yixzNp6K8txSbJGDd5h31rVbLupOaZobQwRLBBfT8M2xYUp+OfnjYbiJTLiqXvL41ZJ3VmkJCsuZIeRoacq7HbhT0VPoJs0glH3l/3G4wOdi1ktnwaRXM3jdKMtBMHQRTEzkXuq28NVKAAjykv+gko1S59ny77dW4AgwTUtGaqoarPfRCDc5+deZm7Y7BU2n7lEaQ3EqrbEXPclvPRCdT7fL280ZY5gFQPu9Kg9SnacJ6OiZgJTQ7FplkKUdGHF445LqdtGistHrZWcCxGFTE8+l2TMCCRIBQeFFvvIvyIQNQhplvhxDoZXMQUBPGwQosqVRC9m31KRsB4R6F7KoRTRIFwipQw0qCAfPqd0/PfBKo8DaUwPfQaRZknxABsWpEMXr8rvv5lTymfuZXkX7grcSPxWkM7F6UfyamzRdcPCmo9PUQ9/XUDrs5buhq5D0e9EJ49uYCKmqrlTImg=
+notifications:
+  email: false
+  slack:
+    rooms:
+    - secure: loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzR
+        APBBJSAB0fPAtC/+uBuxt1LCXnDee5fi2P+BrknC2/ksTzjAV/5wm6qg4j1RPBv3GUuQpY+woKtClb+O
+        BV0875USfxy6JfwzCgglR6gFtqCUCa8K2hMDJ4NQfXrP10fr2kc3KxxCr9s3S3tS8gK1LZI9nKqHVVwX
+        P6HFlUiG0T6ok3mpyzQakkK98OQZLdBnASvye1f8riscPlSBOOXCVp4RetctwmW7iyX4ngacelgupK0q
+        lU2tDm5Bj9DizzRGrYQzi60xTKQGa8Fy7uL558TtE2H4zZs2eqooiaHnXcNGtoftc+MxXCujpjOiW99P
+        nWztdLig0x6jtro1fx+PlRLWB+KuFOGNNQ9P9ORU6QbD9OG98NFBKjM9NaRvox4whqDXcOssFOhuUWOc
+        OzTfyPLSi8CkE2NaOzk9dfp3QrjDUKEM9fFec4nnk499NuPKSdAV/Lc8BgVfBIcJdp7HWkmshrCrL8hQ
+        EWZBSznH2J2YxLQKdgXaUDSgfF1JKbcNu3U1AAAdY2OCrVFZzk4MuEIfACZPSnIWIUktley0oZdYdpA3
+        kzF9CLRfcF13OefqT85YblRyHfAJnQFm7YKj+75PPW1A2CgKZBrNUo=
+    on_success: always
+    on_failure: always
+    on_start: never
+
