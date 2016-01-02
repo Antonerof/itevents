@@ -18,7 +18,8 @@ war{
     archiveName = 'ROOT.war'
     destinationDir = file(projectDir.toString().replace('\\', '/') + '/webapps')
     exclude('test')
-}
+}     
+jettyRun.contextPath = ''
 
 test {
     testLogging {
@@ -96,9 +97,9 @@ if (propertiesFile.exists() && testPropertiesFile.exists()) {
     testPropertiesWriter.close()
 }
 
-httpPort = Integer.valueOf(properties.getProperty('httpPort'));
-stopPort = Integer.valueOf(properties.getProperty('stopPort'));
-stopKey = properties.getProperty('stopKey');
+httpPort = 8080;
+stopPort = 9080;
+stopKey = 'stop';
 
 test.dependsOn "liquibaseTestUpdate"
 
