@@ -96,6 +96,15 @@ if (propertiesFile.exists() && testPropertiesFile.exists()) {
             }
         }
     }
+	Set<String> setProperties = properties.stringPropertyNames()
+	if (!setProperties.contains('database_url')){
+		properties.setProperty('database_url', 'jdbc:postgresql://'+System.getenv('OPENSHIFT_POSTGRESQL_DB_HOST')+':'+System.getenv('OPENSHIFT_POSTGRESQL_DB_PORT')+'/gradletest')
+        propertiesWriter.println('database_url=' + 'jdbc:postgresql://'+System.getenv('OPENSHIFT_POSTGRESQL_DB_HOST')+':'+System.getenv('OPENSHIFT_POSTGRESQL_DB_PORT')+'/gradletest')
+		properties.setProperty('database_username', System.getenv('OPENSHIFT_POSTGRESQL_DB_USERNAME'))
+        propertiesWriter.println('database_username=' + System.getenv('OPENSHIFT_POSTGRESQL_DB_USERNAME'))
+		properties.setProperty('database_password', System.getenv('OPENSHIFT_POSTGRESQL_DB_PASSWORD'))
+        propertiesWriter.println('database_password=' + System.getenv('OPENSHIFT_POSTGRESQL_DB_PASSWORD'))
+	}
     propertiesWriter.flush()
     propertiesWriter.close()
     testPropertiesWriter.flush()
