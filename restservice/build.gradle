@@ -27,11 +27,6 @@ test {
     }
 }
 
-task deploy {
-	dependsOn << 'liquibaseUpdate'
-	dependsOn << 'war'
-}
-
 dependencies {
     compile 'org.springframework:spring-core:4.1.6.RELEASE'
     compile 'org.springframework:spring-web:4.1.6.RELEASE'
