@@ -18,6 +18,7 @@ war{
     archiveName = 'ROOT.war'
     destinationDir = file(projectDir.toString().replace('\\', '/') + '/webapps')
     exclude('test')
+	exclude('restservice\src\main\webapp')
 }     
 jettyRun.contextPath = ''
 
