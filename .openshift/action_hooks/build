@@ -5,7 +5,6 @@ export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
 export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-2.10
 export PATH=$GRADLE_HOME/bin:$PATH
 gradle war
-cp -f $OPENSHIFT_HOMEDIRapp-root/runtime/repo/webapps/ROOT.war $OPENSHIFT_DEPENDENCIES_DIRjbossews/webapps/ROOT.war
 
 
-app-root/runtime/repo/webapps/ROOT.war
+
