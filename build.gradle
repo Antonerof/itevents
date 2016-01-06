@@ -11,4 +11,4 @@ subprojects {
     targetCompatibility = 1.7
 }
 
-defaultTasks 'clean', 'assemble', 'liquibaseUpdate', 'test'
+defaultTasks 'clean', 'assemble', 'liquibaseUpdate'
