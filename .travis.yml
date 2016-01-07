@@ -36,3 +36,20 @@ deploy:
   domain: iteventstest
   on:
     repo: Antonerof/itevents
+	
+notifications:
+  email: false
+  slack:
+    rooms:
+    - secure: loLIgFLbUqWT371fdinBRC9tgyfOs7Xik8R7aIEFMbYzDCLxNUkymVXdzypzG13H+YUzR
+        APBBJSAB0fPAtC/+uBuxt1LCXnDee5fi2P+BrknC2/ksTzjAV/5wm6qg4j1RPBv3GUuQpY+woKtClb+O
+        BV0875USfxy6JfwzCgglR6gFtqCUCa8K2hMDJ4NQfXrP10fr2kc3KxxCr9s3S3tS8gK1LZI9nKqHVVwX
+        P6HFlUiG0T6ok3mpyzQakkK98OQZLdBnASvye1f8riscPlSBOOXCVp4RetctwmW7iyX4ngacelgupK0q
+        lU2tDm5Bj9DizzRGrYQzi60xTKQGa8Fy7uL558TtE2H4zZs2eqooiaHnXcNGtoftc+MxXCujpjOiW99P
+        nWztdLig0x6jtro1fx+PlRLWB+KuFOGNNQ9P9ORU6QbD9OG98NFBKjM9NaRvox4whqDXcOssFOhuUWOc
+        OzTfyPLSi8CkE2NaOzk9dfp3QrjDUKEM9fFec4nnk499NuPKSdAV/Lc8BgVfBIcJdp7HWkmshrCrL8hQ
+        EWZBSznH2J2YxLQKdgXaUDSgfF1JKbcNu3U1AAAdY2OCrVFZzk4MuEIfACZPSnIWIUktley0oZdYdpA3
+        kzF9CLRfcF13OefqT85YblRyHfAJnQFm7YKj+75PPW1A2CgKZBrNUo=
+    on_success: always
+    on_failure: always
+    on_start: never
