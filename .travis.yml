@@ -19,7 +19,7 @@ env:
   - itev_changeLogFile=src/main/resources/liquibase/db.changelog-master.xml
   - itev_httpPort=8080
   - itev_stopPort=8081
-  - itev_cron_start_sending=10 10 10 10 * *
+  - itev_cron_start_sending=30 2 * * * ?
   - itev_reminderAboutEventForThePeriod=1
   - itev_test_database_driver=org.postgresql.Driver
   - itev_test_database_url=jdbc:postgresql://127.0.0.1:5432/itevent_test_db
