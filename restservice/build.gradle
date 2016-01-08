@@ -29,6 +29,8 @@ test {
     }
 }
 
+test.dependsOn 'liquibaseTestUpdate'
+
 dependencies {
 
     compile 'org.springframework:spring-core:4.1.6.RELEASE'
