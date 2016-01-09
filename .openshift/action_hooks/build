@@ -1,6 +1,8 @@
 #!/bin/bash
 set -x
 cd $OPENSHIFT_REPO_DIR
+export JAVA_HOME=$OPENSHIFT_DATA_DIR/jdk1.8.0_65
+export PATH=$JAVA_HOME/bin${PATH#/etc/alternatives/java_sdk_1.7.0/bin}
 export GRADLE_USER_HOME=$OPENSHIFT_DATA_DIR/gradle
 export GRADLE_HOME=$OPENSHIFT_DATA_DIR/gradle-2.10
 export PATH=$GRADLE_HOME/bin:$PATH
