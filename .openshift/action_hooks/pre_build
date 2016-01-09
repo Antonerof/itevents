@@ -2,10 +2,10 @@
 set -x
 if [ ! -d $OPENSHIFT_DATA_DIR/jdk1.8.0_65 ]
 then
-    cd ${OPENSHIFT_DATA_DIR}
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u5-b13/jdk-8u65-linux-x64.tar.gz
-        tar -zxf jdk-8u65-linux-x64.tar.gz
-    rm -f jdk-8u51-linux-i586.tar.gz
+    cd $OPENSHIFT_DATA_DIR
+    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u65-b17/jdk-8u65-linux-x64.tar.gz
+    tar -zxf jdk-8u65-linux-x64.tar.gz
+    rm -f jdk-8u65-linux-x64.tar.gz
 fi
 if [ ! -d $OPENSHIFT_DATA_DIR/gradle-2.10 ]
 then
