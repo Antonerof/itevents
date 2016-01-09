@@ -9,5 +9,4 @@ then
     wget http://services.gradle.org/distributions/gradle-2.10-bin.zip
     unzip gradle-2.10-bin.zip
     rm -f gradle-2.10-bin.zip
-    cd $OPENSHIFT_DATA_DIR
 fi
