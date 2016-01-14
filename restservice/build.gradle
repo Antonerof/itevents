@@ -21,6 +21,7 @@ war{
 //	exclude('static')
 }
 
+
 jettyRun.contextPath = ''
 
 test {
