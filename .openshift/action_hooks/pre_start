@@ -1,5 +1,0 @@
-#!/bin/bash
-set -x
-cd $OPENSHIFT_REPO_DIR
-export JAVA_HOME=/var/lib/openshift/5687b27f2d52711b0c00019e/app-root/data/jdk1.8.0_65
-export PATH=/var/lib/openshift/5687b27f2d52711b0c00019e/app-root/data/jdk1.8.0_65/bin:/etc/alternatives/maven-3.0/bin:/opt/rh/postgresql92/root/usr/bin:/bin:/usr/bin:/usr/sbin
